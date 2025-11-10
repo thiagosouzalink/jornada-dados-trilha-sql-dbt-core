@@ -49,3 +49,47 @@ SELECT *
 FROM customers 
 WHERE country<>'Germany' 
       AND country<>'USA';
+	  
+-- ORDER BY
+-- Ordena clientes pelo país
+SELECT * 
+FROM customers 
+ORDER BY country;
+
+-- Ordena por país em ordem descendente
+SELECT * 
+FROM customers 
+ORDER BY country DESC;
+
+-- Ordena por país e nome do contato
+SELECT * 
+FROM customers 
+ORDER BY country, contact_name;
+
+-- Ordena por país em ordem ascendente e nome em ordem descendente
+SELECT * 
+FROM customers 
+ORDER BY country ASC, 
+         contact_name DESC;
+
+
+-- LIKE e IN
+-- Clientes com nome de contato começando por "a"
+SELECT * 
+FROM customers 
+WHERE contact_name LIKE 'a%';
+
+-- Clientes com nome de contato não começando por "a"
+SELECT * 
+FROM customers 
+WHERE contact_name NOT LIKE 'a%';
+
+-- Clientes de países específicos
+SELECT * 
+FROM customers 
+WHERE country IN ('Germany', 'France', 'UK');
+
+-- Clientes não localizados em 'Germany', 'France', 'UK'
+SELECT * 
+FROM customers 
+WHERE country NOT IN ('Germany', 'France', 'UK');

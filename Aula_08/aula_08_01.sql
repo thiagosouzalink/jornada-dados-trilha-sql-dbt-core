@@ -30,6 +30,10 @@ BEGIN
 	SET saldo = saldo + CASE WHEN p_tipo = 'd' THEN -p_valor ELSE p_valor END
 	WHERE id = p_cliente_id;
 	
+	-- Insere uma nova transação
+	INSERT INTO transactions (tipo, descricao, valor, cliente_id)
+	VALUES (p_tipo, p_descricao, p_valor, p_cliente_id);
+	
 	SELECT saldo INTO saldo_apos_transacao
 	FROM clients
 	WHERE id = p_cliente_id;

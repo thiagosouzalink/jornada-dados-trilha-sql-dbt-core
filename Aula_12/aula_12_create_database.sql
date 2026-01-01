@@ -1,8 +1,8 @@
 -- Database: jornada_dados_index
 
--- DROP DATABASE IF EXISTS jornada_dados_index;
+-- DROP DATABASE IF EXISTS jornada_dados_index_partition;
 
-CREATE DATABASE jornada_dados_index
+CREATE DATABASE jornada_dados_index_partition
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
